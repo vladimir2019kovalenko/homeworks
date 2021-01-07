@@ -16,9 +16,10 @@ console.log(totalAmount);
 
 function getGreeting(name) {
     // код для задачи №2 писать здесь
-    let greeting = (`Привет, мир! Меня зовут ${name}.`);
-    if(name === ""){
-        name === 'Аноним';
+    let myName = name;
+    let greeting = `Привет, мир! Меня зовут ${myName}.`;
+    if(myName = " "){
+        myName === "Аноним";
     } else {
 
     }
