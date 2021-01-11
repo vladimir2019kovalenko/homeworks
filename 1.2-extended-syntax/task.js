@@ -4,27 +4,23 @@ function getResult(a,b,c){
      b = 4;
      c = 3;
     let x = [];
-    let discriminant = `${Math.pow(b , 2) - 4 * a * c}`;
-    
-    
-      if (discriminant = 0) {
-        let mathRootFirst = `${(((- b) + Math.sqrt(discriminant).toFixed(2)) / (a * 2))}`;
+    let discriminant = Math.pow(b , 2) - 4 * a * c;
+    if (discriminant = 0) {
+        let mathRootFirst = (- b + Math.sqrt(discriminant)) / (a * 2);
         return x.push(mathRootFirst);
     } else if (discriminant > 0) {
-        let mathRootSecond = `${(((- b) - Math.sqrt(discriminant).toFixed(2)) / (a * 2))}`;
+        let mathRootSecond = (- b - Math.sqrt(discriminant)) / (a * 2);
         return x.push(mathRootFirst, mathRootSecond);
     } else {
-        return x;
+        return x = 0;
     }
 }
 
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    
-    if(marks === []){
+    if(marks.length === 0){
         return 0;
-    } else  if(marks === ![]) {
+    } else {
         marks.splice(5);
         let sum = 0;
         for(let i = 0; i < marks.length; i++){
@@ -38,9 +34,11 @@ function getAverageMark(marks){
 
 function askDrink(name,dateOfBirthday){
     let age = new Date().getFullYear() - dateOfBirthday;
+
+    console.log(age);
     if (age > 18) {
-        return `Не желаете ли олд-фэшн, ${name}?`
+        return `Не желаете ли олд-фэшн, ${name}?`;
     } else {
-        return `Сожалею, ${name}, но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`
+        return `Сожалею, ${name}, но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`;
     }
 }
