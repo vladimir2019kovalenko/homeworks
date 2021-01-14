@@ -1,18 +1,17 @@
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
-     a = 2;
-     b = 4;
-     c = 3;
+     
     let x = [];
     let discriminant = Math.pow(b , 2) - 4 * a * c;
-    if (discriminant = 0) {
-        let mathRootFirst = (- b + Math.sqrt(discriminant)) / (a * 2);
-        return x.push(mathRootFirst);
+    if (discriminant === 0) {
+        x.push((- b + Math.sqrt(discriminant)) / (a * 2));
+        return x;
     } else if (discriminant > 0) {
-        let mathRootSecond = (- b - Math.sqrt(discriminant)) / (a * 2);
-        return x.push(mathRootFirst, mathRootSecond);
-    } else {
-        return x = 0;
+        x.push((- b + Math.sqrt(discriminant)) / (a * 2), (- b - Math.sqrt(discriminant)) / (a * 2) );
+        return x;
+    } 
+    {
+        return x;
     }
 }
 
@@ -33,8 +32,7 @@ function getAverageMark(marks){
 
 
 function askDrink(name,dateOfBirthday){
-    let age = new Date().getFullYear() - dateOfBirthday;
-
+    let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
     console.log(age);
     if (age > 18) {
         return `Не желаете ли олд-фэшн, ${name}?`;
