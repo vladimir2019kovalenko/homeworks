@@ -32,61 +32,55 @@ showSolutionsMessage( 2, 4, 2 );
 //Задание 2
 
 
-function getAverageScore(data){
-    data = {
-        algebra : [2, 4, 5, 2, 3, 4],
-         geometry : [2, 4, 5],
-         russian : [3, 3, 4, 5],
-         physics : [5, 5],
-         music : [2, 2, 6],
-         english : [4, 4, 3],
-         poetry : [5, 3, 4],
-         chemistry : [2],
-         french : [4, 4]
-     }
-      
-     let countElementsData = Object.keys(data).length;
-      console.log(countElementsData);
-     /*let value = 0;
-     for (let prop in data) {
-      value = data[ prop ];
-      console.log(value);
-     }*/
-      console.log(getAverageMark(data.algebra));
-      console.log(getAverageMark(data.geometry));
-      console.log(getAverageMark(data.russian));
-      console.log(getAverageMark(data.physics));
-      console.log(getAverageMark(data.music));
-      console.log(getAverageMark(data.english));
-      console.log(getAverageMark(data.poetry));
-      console.log(getAverageMark(data.chemistry));
-      console.log(getAverageMark(data.french));
-      
-      
-      }
-      
-      /*console.log(getAverageScore({
-        algebra : [2, 4, 5, 2, 3, 4],
-         geometry : [2, 4, 5],
-         russian : [3, 3, 4, 5],
-         physics : [5, 5],
-         music : [2, 2, 6],
-         english : [4, 4, 3],
-         poetry : [5, 3, 4],
-         chemistry : [2],
-         french : [4, 4]
-      }));*/
-     
-     function getAverageMark(marks){
-         if(marks.length === 0){
-             return 0;
-         } else {
-             let sum = 0;
-             for(let i = 0; i < marks.length; i++){
-                 sum += marks[i];
-             }
-             let averageMarks = sum / marks.length;
-              
-             return averageMarks;
+
+     function getAverageScore(data){
+        data = { algebra : [2, 4, 5, 2, 3, 4],
+            geometry : [2, 4, 5],
+            russian : [3, 3, 4, 5],
+            physics : [5, 5],
+            music : [2, 2, 6],
+            english : [4, 4, 3],
+            poetry : [5, 3, 4],
+            chemistry : [2],
+            french : [4, 4]
+        };
+        
+         
+        let countElementsData = Object.keys(data).length;
+         console.log(countElementsData);
+         
+        for (let prop in data) {
+         let value = data[ prop ];
+         let averageMark = getAverageMark(value);
+         console.log({ [ prop ] : averageMark });
          }
-     }
+         
+         }
+         
+        
+        function getAverageMark(marks){
+            if(marks.length === 0){
+                return 0;
+            } else {
+                let sum = 0;
+                for(let i = 0; i < marks.length; i++){
+                    sum += marks[i];
+                }
+                let averageMarks = sum / marks.length;
+                 
+                return averageMarks;
+            }
+        }
+        
+        
+        console.log(getAverageScore({
+           algebra : [2, 4, 5, 2, 3, 4],
+            geometry : [2, 4, 5],
+            russian : [3, 3, 4, 5],
+            physics : [5, 5],
+            music : [2, 2, 6],
+            english : [4, 4, 3],
+            poetry : [5, 3, 4],
+            chemistry : [2],
+            french : [4, 4]
+         }));
