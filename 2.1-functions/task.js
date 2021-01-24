@@ -44,6 +44,7 @@ function getAverageScore(data){
       console.log(newData);
       console.log(Object.values(newData));
       console.log(getAverageMark(Object.values(newData)));
+      return newData;
      }
      
      }
