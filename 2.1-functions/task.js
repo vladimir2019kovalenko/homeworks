@@ -30,47 +30,45 @@ showSolutionsMessage( 7, 20, -3 );
 showSolutionsMessage( 2, 4, 2 );
 
 //Задание 2
-function getAverageScore(data){
-    let countElementsData = Object.keys(data).length;
-     console.log(countElementsData);
-    
-    for (let prop in data) {
-      //console.log(data[prop]);
-     let averageMark = getAverageMark(data[prop]);
-     console.log(averageMark);
-     let newData = {
-       [prop] : averageMark
-     }
-      console.log(newData);
-      console.log(Object.values(newData));
-      console.log(getAverageMark(Object.values(newData)));
-      return newData;
-     }
-     
-     }
-    
-    function getAverageMark(marks){
-        if(marks.length === 0){
-            return 0;
-        } else {
-            let sum = 0;
-            for(let i = 0; i < marks.length; i++){
-                sum += marks[i];
+
+    function getAverageScore(data){
+        let countElementsData = Object.keys(data).length;
+         console.log(countElementsData);
+         for (let prop in data) {
+         let averageMark = getAverageMark(data[prop]);
+         let average (+= averageMark) / countElementsData;
+         let newData = {
+           [prop] : averageMark
+         }
+         newData.average = average;
+          
+          return newData;
+         }
+         }
+         
+        
+        function getAverageMark(marks){
+            if(marks.length === 0){
+                return 0;
+            } else {
+                let sum = 0;
+                for(let i = 0; i < marks.length; i++){
+                    sum += marks[i];
+                }
+                let averageMarks = sum / marks.length;
+                 
+                return averageMarks;
             }
-            let averageMarks = sum / marks.length;
-             
-            return averageMarks;
         }
-    }
-    
-    
-    console.log(getAverageScore({ algebra : [2, 4, 5, 2, 3, 4],
-        geometry : [2, 4, 5],
-        russian : [3, 3, 4, 5],
-        physics : [5, 5],
-        music : [2, 2, 6],
-        english : [4, 4, 3],
-        poetry : [5, 3, 4],
-        chemistry : [2],
-        french : [4, 4]
-    }))
+        
+        
+        console.log(getAverageScore({ algebra : [2, 4, 5, 2, 3, 4],
+            geometry : [2, 4, 5],
+            russian : [3, 3, 4, 5],
+            physics : [5, 5],
+            music : [2, 2, 6],
+            english : [4, 4, 3],
+            poetry : [5, 3, 4],
+            chemistry : [2],
+            french : [4, 4]
+        }));
