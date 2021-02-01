@@ -9,18 +9,18 @@ class PrintEditionItem {
    fix(){
     this.state = this.state * 1.5; 
    }
-   set newState(state) {
-       if(this._newState < 0) {
-           this.state === 0;
-       } else if(this._newState > 100) {
-        this.state === 100;
-       } else {
-        this._newState === state;
-       }
-   }
-   get newState() {
-       return this._newState;
-   }
+   set state(newState) {
+    if(this._state < 0) {
+        newState = 0;
+    } else if(this._state > 100) {
+        newState = 100;
+    } else {
+     this._state = newState;
+    }
+}
+get state() {
+    return this._state;
+}
 }
 const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
@@ -72,10 +72,11 @@ console.log(picknick.state); //15
 
  //Задача 2
 
- class Library extends Book {
-     constructor (author, name, releaseDate, pagesCount) {
-        super(author, name, releaseDate, pagesCount)
+ class Library  {
+     constructor (name, books, state) {
+         this.name = name;
          this.books = [];
+         this.state = 100;
      }
   addBook(book) {
      if (this.state > 30) {
@@ -88,7 +89,7 @@ console.log(picknick.state); //15
 
  }
  giveBookByName(bookName) {
-     bookName = this.name;
+     bookName = library.addBook(this.book);
      if(this.books.includes(bookName)){
          let removed = this.books.splice(indexOf(bookName), 1);
          return removed;
