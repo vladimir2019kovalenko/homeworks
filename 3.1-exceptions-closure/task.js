@@ -9,12 +9,11 @@ function parseCount(text) {
     
     function validateCount(str) {
         try {
-          parseCount(str);
+         return parseCount(str);
         } catch(e) {
         return e;
         }
-        return parseCount(str);
-        }
+    }
     // Задача 2
 
     class Triangle {
@@ -22,32 +21,32 @@ function parseCount(text) {
             this.a = a;
             this.b = b;
             this.c = c;
-            if ((a + b) < c) {
+            if ((a + b) < c, (b + c) < a, (a + c) < b) {
                 throw new Error ("Треугольник с такими сторонами не существует");  
-            } else if ((b + c) < a) {
-                throw new Error ("Треугольник с такими сторонами не существует"); 
-            } else if ((a + c) < b) {
-                throw new Error ("Треугольник с такими сторонами не существует");
-            }
+            } 
         }
-        getPerimeter(perimeter) {
+         getPerimeter(perimeter) {
             perimeter = this.a + this.b + this.c;
             return perimeter;
         }
-        getArea(aria) {
-            let semiPerimeter  = this.getPerimeter / 2;
-            aria = `Math.sqrt(${semiPerimeter} * ((${semiPerimeter} - ${this.a}) * (${semiPerimeter} - ${this.b}) * (${semiPerimeter} - ${this.c})))`;
-            let ariaFix = +aria.Fixed(3);
-            console.log(ariaFix);
-            return ariaFix;
+         getArea(area) {
+            let semiPerimeter = this.getPerimeter() / 2;
+            area = Math.sqrt(semiPerimeter * ((semiPerimeter - this.a) * (semiPerimeter - this.b) * (semiPerimeter - this.c)));
+            let areaFix = +area.toFixed(3);
+            return areaFix;
         }
-
     }
-       function getTriangle (a, b, c) {
+    
+         function getTriangle(a, b ,c) {
          try {
-             return new Triangle();
-          } catch {
-            const obj = new Obj(getArea, getPerimeter)
-             return "Ошибка! Треугольник не существует";
-          }
+             return newTriangle();
+          } catch(e) {
+           return  e.triangle = {
+              getArea:getArea("Ошибка! Треугольник не существует!"),
+              getPerimeter:getPerimeter("Ошибка! Треугольник не существует!")
+             }  
+           }
     }
+    const triangle = new Triangle(6,10,15);
+    console.log(triangle.getPerimeter());
+    console.log(triangle.getArea());
