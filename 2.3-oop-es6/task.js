@@ -72,7 +72,7 @@ console.log(picknick.state); //15
 
  //Задача 2
 
- class Library  {
+ class Library {
      constructor (name, books, state) {
          this.name = name;
          this.books = [];
@@ -89,7 +89,7 @@ console.log(picknick.state); //15
 
  }
  giveBookByName(bookName) {
-     bookName = library.addBook(this.book);
+     bookName = this.books.indexOf(this.book);
      if(this.books.includes(bookName)){
          let removed = this.books.splice(indexOf(bookName), 1);
          return removed;
