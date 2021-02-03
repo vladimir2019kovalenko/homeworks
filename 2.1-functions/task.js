@@ -31,20 +31,37 @@ showSolutionsMessage( 2, 4, 2 );
 
 //Задание 2
 
-    function getAverageScore(data){
-        let countElementsData = Object.keys(data).length;
-         console.log(countElementsData);
-         for (let prop in data) {
-         let averageMark = getAverageMark(data[prop]);
-         let average (+= averageMark) / countElementsData;
-         let newData = {
-           [prop] : averageMark
-         }
-         newData.average = average;
-          
-          return newData;
-         }
-         }
+function getAverageScore(data){
+    let countElementsData = Object.keys(data).length;
+    let total = 0;
+    for (let prop in data) {
+    let averageMarks = getAverageMark(data[prop]);
+    total += averageMarks;
+    data[prop] = averageMarks;
+}      
+    let average = total / countElementsData;
+    data.average = average;
+    if(data === {}){
+        average === 0;
+    } else {
+          average === total / countElementsData;
+    }
+     return data;
+}
+    
+    function getAverageMark(marks){
+        if(marks.length === 0){
+            return 0;
+        } else {
+            let sum = 0;
+            for(let i = 0; i < marks.length; i++){
+                sum += marks[i];
+            }
+            let averageMarks = sum / marks.length;
+             
+            return averageMarks;
+        }
+    }
          
         
         function getAverageMark(marks){
