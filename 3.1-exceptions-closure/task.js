@@ -37,9 +37,9 @@ function parseCount(text) {
         }
     }
     
-         function getTriangle(a, b ,c) {
+         function getTriangle(a, b, c) {
          try {
-             return newTriangle();
+             return new Triangle(a, b, c);
           } catch(e) {
            return  e.triangle = {
               getArea:getArea("Ошибка! Треугольник не существует!"),
