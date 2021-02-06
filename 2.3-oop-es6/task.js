@@ -75,19 +75,20 @@ console.log(picknick.state); //15
  class Library {
      constructor (name, books) {
          this.name = name;
+         this.books = books;
          this.books = [];
      }
   addBook(book) {
-     if (this.state > 30) {
+       if (this.books.state > 30) {
         return  this.books.push(book);
      } else {
-         return this.books.length === 0; 
+         return this.books = []; 
      }
  }
  findBookBy(type, value) {
     for (let i = 0; i < this.books.length; i++) {
         if(book[type] === value) {
-            return this.book;
+            return book[type];
         } else {
             return null;
         }
@@ -95,8 +96,8 @@ console.log(picknick.state); //15
  }
  giveBookByName(bookName) {
     for (let i = 0; i < this.books.length; i++){
-       if(book.name = bookName) {
-        bookName = this.books.indexOf(this.book);
+       if(book = bookName) {
+        bookName = this.books.indexOf(book);
         let removed = this.books.splice(indexOf(bookName), 1);
          return removed;
     } else {
