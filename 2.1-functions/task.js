@@ -62,24 +62,7 @@ function getAverageScore(data){
             return averageMarks;
         }
     }
-         
-        
-        function getAverageMark(marks){
-            if(marks.length === 0){
-                return 0;
-            } else {
-                let sum = 0;
-                for(let i = 0; i < marks.length; i++){
-                    sum += marks[i];
-                }
-                let averageMarks = sum / marks.length;
-                 
-                return averageMarks;
-            }
-        }
-        
-        
-        console.log(getAverageScore({ algebra : [2, 4, 5, 2, 3, 4],
+    console.log(getAverageScore({ algebra : [2, 4, 5, 2, 3, 4],
             geometry : [2, 4, 5],
             russian : [3, 3, 4, 5],
             physics : [5, 5],
