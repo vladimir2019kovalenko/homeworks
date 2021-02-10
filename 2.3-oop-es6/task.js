@@ -79,7 +79,7 @@ console.log(picknick.state); //15
          this.books = [];
      }
   addBook(book) {
-       if (this.books.state > 30) {
+       if (this.books.state < 30) {
         return  this.books.push(book);
      } else {
          return this.books = []; 
