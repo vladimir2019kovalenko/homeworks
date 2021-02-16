@@ -79,16 +79,16 @@ console.log(picknick.state); //15
          this.books = [];
      }
   addBook(book) {
-       if (book.state < 30) {
+       if (book.state > 30) {
         return  this.books.push(book);
      } else {
-         return this.books = []; 
+          
      }
  }
  findBookBy(type, value) {
     for (let i = 0; i < this.books.length; i++) {
-        if(book[type] === value) {
-            return book[type];
+        if(this.book[type] === value) {
+            return this.book[type];
         } else {
             return null;
         }
@@ -114,8 +114,8 @@ library.addBook(new NovelBook("Герберт Уэллс", "Машина вре�
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
 console.log(library.findBookBy("name", "Властелин колец")); //null
-console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+//console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-library.giveBookByName("Машина времени");
+//library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
