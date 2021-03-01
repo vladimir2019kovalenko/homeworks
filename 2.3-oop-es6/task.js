@@ -87,17 +87,17 @@ console.log(picknick.state); //15
  
  findBookBy(type, value) {
     for (let i = 0; i < this.books.length; i++) {
-        
+        console.log(book[type]);//неопределено, как определить? this.book[type]?
         if(book[type] === value) {
-            return ;
+            return book[type];
         } else {
-            return null
+            return null;
         }
     }
  }
  /*giveBookByName(bookName) {
     for (let i = 0; i < this.books.length; i++){
-       if(this.books[type] = bookName) {
+       if(this.book[type] = bookName) {
         bookName = this.books.indexOf(bookName);
         let removed = this.books.splice(indexOf(bookName), 1);
          return removed;
