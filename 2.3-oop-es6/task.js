@@ -86,26 +86,26 @@ console.log(picknick.state); //15
  }
  
  findBookBy(type, value) {
-    for (let i = 0; i < this.books.length; i++) {
-        console.log(book[type]);//неопределено, как определить? this.book[type]?
+    for (let book of this.books) {
+        
         if(book[type] === value) {
-            return book[type];
+            return book;
         } else {
             return null;
         }
     }
  }
- /*giveBookByName(bookName) {
-    for (let i = 0; i < this.books.length; i++){
-       if(this.book[type] = bookName) {
-        bookName = this.books.indexOf(bookName);
-        let removed = this.books.splice(indexOf(bookName), 1);
+ giveBookByName(bookName) {
+    for (let book of this.books){
+       if(book = bookName) {
+        bookName = this.books.indexOf(book);
+        let removed = this.books.splice(bookName, 1);
          return removed;
     } else {
          return null;
      }
     }
-  }*/
+  }
 }
 const library = new Library("Библиотека имени Ленина");
 
@@ -118,5 +118,5 @@ console.log(library.findBookBy("name", "Властелин колец")); //null
 console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-//library.giveBookByName("Машина времени");
+library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
