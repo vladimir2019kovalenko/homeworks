@@ -90,14 +90,13 @@ console.log(picknick.state); //15
         
         if(book[type] === value) {
             return book;
-        } else {
-            return null;
-        }
+        } 
     }
+     return null;
  }
  giveBookByName(bookName) {
     for (let book of this.books){
-       if(book = bookName) {
+       if(book = true) {
         bookName = this.books.indexOf(book);
         let removed = this.books.splice(bookName, 1);
          return removed;
