@@ -96,14 +96,13 @@ console.log(picknick.state); //15
  }
  giveBookByName(bookName) {
     for (let book of this.books){
-       if(book = true) {
-        bookName = this.books.indexOf(book);
-        let removed = this.books.splice(bookName, 1);
+       if(book.name = bookName) {
+        let removed = this.books.splice(book, 1).join();
+        console.log(removed);
          return removed;
-    } else {
-         return null;
-     }
+      }  
     }
+    return null;
   }
 }
 const library = new Library("Библиотека имени Ленина");
