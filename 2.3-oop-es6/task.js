@@ -97,7 +97,7 @@ console.log(picknick.state); //15
  giveBookByName(bookName) {
     for (let book of this.books){
        if(book.name = bookName) {
-        let removed = this.books.splice(book, 1).join();
+        let removed = this.books.splice(book, 1)[0];
         console.log(removed);
          return removed;
       }  
